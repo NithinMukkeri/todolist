@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css todo.css"/>
+    <script src="js todo.js"></script>
+    <link rel="icon"type="image/x-icon" href=""/>
+
+
+
+</head>
+
+<body>
+    <div class="bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="todos">todos</h1>
+                    <p class="Task"><span class="todos">creat</span>Task</p>
+                    <input type="text" class="in" id="input" placeholder="enter here todos" />
+                    <button class="btn btn-primary m-4" id="addtodo">add</button>
+                    <p class="Task"><span class="todos">my</span>Tasks</p>
+                    <ul class="todoc" id="todoi"></ul>
+                    <button class=" btn btn-primary m-3" id="save">save</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+C:\Users\ADMIN\Desktop\index

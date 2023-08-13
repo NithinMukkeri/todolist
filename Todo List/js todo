@@ -1,0 +1,115 @@
+let todoc = document.getElementById("todoi");
+let add = document.getElementById("addtodo");
+let save = document.getElementById("save");
+save.onclick = function() {
+    localStorage.setItem("todolist", JSON.stringify(todolist));
+}
+
+function gett() {
+    let stodol = localStorage.getItem("todolist");
+    let ptodol = JSON.parse(stodol);
+    if (ptodol === null) {
+        return [];
+    } else {
+        return ptodol;
+    }
+}
+let todolist = gett();
+
+
+function ond(todoid) {
+    let d = document.getElementById(todoid);
+    todoc.removeChild(d);
+
+    let dli = todolist.findIndex(function(e) {
+        let eti = "todo" + e.un;
+        if (eti === e) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    todolist.splice(dli, 1);
+
+}
+
+function ontc(cheid, labid) {
+    let chee = document.getElementById(cheid);
+    let lab = document.getElementById(labid);
+    lab.classList.toggle("nani");
+
+}
+let todon = todolist.length;
+
+function addtodo() {
+    let inp = document.getElementById("input");
+    let v = inp.value;
+    if (v === "") {
+        alert("enter valid text");
+        return;
+    }
+    todon = todon + 1;
+    let newtodo = {
+        text: v,
+        u: todon,
+    };
+    todolist.push(newtodo);
+    creat(newtodo);
+    inp.value = "";
+
+}
+
+add.onclick = function() {
+    addtodo();
+}
+
+function creat(todo) {
+    let labid = "lab" + todo.un;
+    let cheid = "che" + todo.un;
+    let todoid = "todo" + todo.un;
+    let todoe = document.createElement("li");
+    todoe.classList.add("todoo", "d-flex", "flex-row");
+    todoe.id = todoid;
+    todoc.appendChild(todoe);
+
+    let ine = document.createElement("input");
+    ine.type = "checkbox";
+    ine.id = cheid;
+    ine.classList.add("che");
+    ine.onclick = function() {
+        ontc(cheid, labid);
+    }
+    todoe.appendChild(ine);
+
+
+    let labc = document.createElement("div");
+    labc.classList.add("lab", "d-flex", "flex-row");
+    todoe.appendChild(labc);
+
+    let labe = document.createElement("label");
+    labe.setAttribute("for", cheid);
+    labe.id = labid;
+    labe.textContent = todo.text;
+    labe.classList.add("chel");
+    labc.appendChild(labe);
+
+
+    let dc = document.createElement("div");
+    dc.classList.add("dcc");
+    labc.appendChild(dc)
+
+    let del = document.createElement("i");
+    del.classList.add("far", "fa-trash-alt", "deli");
+    del.onclick = function() {
+        ond(todoid);
+    }
+    dc.appendChild(del)
+
+
+
+
+
+}
+for (let todo of todolist) {
+    creat(todo)
+}
